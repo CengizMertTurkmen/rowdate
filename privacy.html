@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rowdate privacy policy</title>
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-lang="en">
+<header class="top"><div class="wrap"><a class="brand" href="./"><img src="logo.svg" alt="" width="30" height="30"> Rowdate</a><nav><span class="langs"><button data-set="tr" aria-pressed="false">TR</button> <button data-set="en" aria-pressed="false">EN</button></span></nav></div></header>
+<main class="doc">
+<div data-l="en">
+<h1>Privacy policy</h1>
+<p class="updated">Last updated: 4 November 2026</p>
+<p>Rowdate is a Google Sheets add-on, operated by CodEven (Cengiz Mert Türkmen, sole proprietorship, Turkey), that creates, updates and deletes Google Calendar events from rows of the spreadsheet you open it in.</p>
+<h2>What Rowdate accesses</h2>
+<ul>
+  <li><b>The open spreadsheet</b> (<code>spreadsheets.currentonly</code>): reads the header row and the rows you sync, and writes the event ID and a status into two columns of that sheet. No other file is accessed.</li>
+  <li><b>Your calendar list</b> (<code>calendar.calendarlist.readonly</code>): shows the calendars you can add events to, so you can pick one.</li>
+  <li><b>Calendar events</b> (<code>calendar.events</code>): creates, updates and deletes only the events that belong to rows you sync. Rowdate does not read your other events.</li>
+  <li><b>Sidebar and triggers</b> (<code>script.container.ui</code>, <code>script.scriptapp</code>): shows the sidebar, and for Pro live sync, installs an on-edit trigger on that spreadsheet only.</li>
+  <li><b>External requests</b> (<code>script.external_request</code>): used only to call the Google Calendar API (www.googleapis.com) and Lemon Squeezy's license API (api.lemonsqueezy.com).</li>
+</ul>
+<h2>Where data goes and is stored</h2>
+<ul>
+  <li>Values from the rows you sync are sent to Google Calendar to make the events. They stay in your spreadsheet and your calendar.</li>
+  <li>Your column choices, a fingerprint of each synced event (to skip unchanged rows) and a monthly usage counter are stored in Apps Script document and user properties inside your Google account.</li>
+  <li>If you activate Pro, your license key is sent to Lemon Squeezy to check it, and stored in your Apps Script user properties.</li>
+  <li>Rowdate has no servers of its own and keeps no copy of your spreadsheet or calendar data. We do not sell, share or use your data for advertising, and we do not use it to train AI models.</li>
+</ul>
+<h2>Google API data</h2>
+<p>Rowdate's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+<h2>Deleting your data</h2>
+<p>Uninstall Rowdate from Extensions › Add-ons › Manage add-ons, delete the two Rowdate columns, and remove the events from your calendar if you want them gone. Payment records are kept by Lemon Squeezy, our merchant of record, under its own policy.</p>
+<h2>Contact</h2>
+<p><a data-support href="#"></a></p>
+</div>
+<div data-l="tr">
+<h1>Gizlilik politikası</h1>
+<p class="updated">Son güncelleme: 4 Kasım 2026</p>
+<p>Rowdate, CodEven (Cengiz Mert Türkmen, şahıs işletmesi, Türkiye) tarafından işletilen; açtığın tablonun satırlarından Google Takvim etkinliği oluşturan, güncelleyen ve silen bir Google E-Tablolar eklentisidir.</p>
+<h2>Rowdate neye erişir</h2>
+<ul>
+  <li><b>Açık tablo</b> (<code>spreadsheets.currentonly</code>): başlık satırını ve aktardığın satırları okur, etkinlik ID'sini ve durumu o sayfanın iki sütununa yazar. Başka dosyaya erişmez.</li>
+  <li><b>Takvim listen</b> (<code>calendar.calendarlist.readonly</code>): etkinlik ekleyebildiğin takvimleri seçebilmen için listeler.</li>
+  <li><b>Takvim etkinlikleri</b> (<code>calendar.events</code>): yalnızca aktardığın satırlara ait etkinlikleri oluşturur, günceller, siler. Diğer etkinliklerini okumaz.</li>
+  <li><b>Kenar paneli ve tetikleyici</b> (<code>script.container.ui</code>, <code>script.scriptapp</code>): paneli gösterir; Pro canlı senkron için yalnızca o tabloya bir düzenleme tetikleyicisi kurar.</li>
+  <li><b>Dış istekler</b> (<code>script.external_request</code>): yalnızca Google Takvim API'si (www.googleapis.com) ve Lemon Squeezy lisans API'si (api.lemonsqueezy.com) için.</li>
+</ul>
+<h2>Veri nereye gider, nerede durur</h2>
+<ul>
+  <li>Aktardığın satırların değerleri etkinlik oluşturmak için Google Takvim'e gider; tablonda ve takviminde kalır.</li>
+  <li>Sütun seçimlerin, her etkinliğin parmak izi (değişmeyen satırları atlamak için) ve aylık kullanım sayacı Google hesabındaki Apps Script özelliklerinde saklanır.</li>
+  <li>Pro'yu etkinleştirirsen lisans anahtarın kontrol için Lemon Squeezy'ye gider ve Apps Script kullanıcı özelliklerinde saklanır.</li>
+  <li>Rowdate'in kendi sunucusu yoktur; tablonun ya da takviminin kopyasını tutmaz. Verini satmayız, paylaşmayız, reklam ya da yapay zekâ eğitimi için kullanmayız.</li>
+</ul>
+<h2>Google API verisi</h2>
+<p>Rowdate'in Google API'lerinden aldığı bilgiyi kullanımı ve aktarımı, Sınırlı Kullanım şartları dahil <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>'ye uyar.</p>
+<h2>Verini silmek</h2>
+<p>Rowdate'i Uzantılar › Eklentiler › Eklentileri yönet'ten kaldır, iki Rowdate sütununu sil, istersen etkinlikleri takviminden sil. Ödeme kayıtları satıcı kaydı Lemon Squeezy'de kendi politikasına göre tutulur.</p>
+<h2>İletişim</h2>
+<p><a data-support href="#"></a></p>
+</div>
+</main>
+<footer class="site"><div class="wrap"><div>© 2026 Rowdate · CodEven</div><div><a href="./">Home</a><a href="guide">Guide</a><a href="terms">Terms</a></div></div></footer>
+<script src="site.js"></script>
+</body>
+</html>

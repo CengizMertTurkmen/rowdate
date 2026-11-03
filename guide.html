@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rowdate guide</title>
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-lang="en">
+<header class="top"><div class="wrap"><a class="brand" href="./"><img src="logo.svg" alt="" width="30" height="30"> Rowdate</a><nav><span class="langs"><button data-set="tr" aria-pressed="false">TR</button> <button data-set="en" aria-pressed="false">EN</button></span></nav></div></header>
+<main class="doc">
+
+<div data-l="en">
+<h1>Guide</h1>
+<p class="updated">Five minutes from install to your first synced event.</p>
+<h2>1. Open Rowdate</h2>
+<p>In your sheet choose <b>Extensions › Rowdate › Open Rowdate</b>. Row 1 must hold column names, for example <code>Client</code>, <code>Date</code>, <code>Time</code>, <code>Duration</code>.</p>
+<h2>2. Pick the calendar</h2>
+<p>The list shows every calendar you can add events to, including shared ones.</p>
+<h2>3. Match the columns</h2>
+<ul>
+  <li><b>Event title</b> is a template. Use <b>+ Insert column</b> to build titles like <code>{{Client}} · {{Service}}</code>.</li>
+  <li><b>Date column</b> is required. Real dates, formula results and text like <code>2026-11-10</code>, <code>10.11.2026</code> or <code>11/10/2026</code> all work. Slashes follow your spreadsheet's locale (File › Settings).</li>
+  <li><b>Time</b> is optional. Without it, events are all-day. A date cell that includes a time also works.</li>
+  <li><b>Duration</b> in minutes (<code>90</code>), hours (<code>1.5 h</code>) or <code>1:30</code>. Default 60 minutes. Or use an <b>End date</b> / <b>End time</b> column instead.</li>
+  <li><b>More fields</b>: location, description (a template too), guest emails (comma separated), colour (1–11 or a name like <code>blue</code>, <code>tomato</code>), repeat (<code>daily</code>, <code>weekly</code>, <code>monthly</code>, <code>yearly</code> or a full <code>RRULE:</code>) with an optional repeat count, reminder minutes.</li>
+  <li><b>Cancel column</b>: write <code>yes</code>, <code>x</code> or tick a checkbox to delete that row's event on the next sync.</li>
+</ul>
+<p>The preview shows the first row as an event. If something is off, it says what.</p>
+<h2>4. Sync</h2>
+<p><b>Sync all rows</b> or select rows first and use <b>Sync selected rows</b>. Rowdate adds two columns, <code>Rowdate Event ID</code> and <code>Rowdate Status</code>. Don't edit the ID column: it links the row to its event. Rows that did not change are skipped next time.</p>
+<h2>Live sync (Pro)</h2>
+<p>Tick <b>Live sync</b> and every edit you make on that sheet updates the event within seconds. Changes made by formulas or other people's scripts don't trigger it; run a normal sync for those.</p>
+<h2>Common messages</h2>
+<ul>
+  <li><b>Date not recognised</b>: the cell isn't a date Rowdate can read. Format the column as a date, or use <code>2026-11-10</code>.</li>
+  <li><b>End is before start</b>: check the end time or duration.</li>
+  <li><b>You cannot write to this calendar</b>: ask its owner for "Make changes to events" access, or pick another calendar.</li>
+  <li><b>Event not found in the calendar</b>: it was deleted in Calendar; the next sync creates it again.</li>
+</ul>
+<p>Stuck? Email <a data-support href="#"></a></p>
+</div>
+
+<div data-l="tr">
+<h1>Rehber</h1>
+<p class="updated">Yüklemeden ilk etkinliğe beş dakika.</p>
+<h2>1. Rowdate'i aç</h2>
+<p>Tabloda <b>Uzantılar › Rowdate › Rowdate'i aç</b>. İlk satır sütun adları olmalı, ör. <code>Müşteri</code>, <code>Tarih</code>, <code>Saat</code>, <code>Süre</code>.</p>
+<h2>2. Takvimi seç</h2>
+<p>Listede etkinlik ekleyebildiğin tüm takvimler var, ortak takvimler dahil.</p>
+<h2>3. Sütunları eşle</h2>
+<ul>
+  <li><b>Etkinlik başlığı</b> bir şablondur. <b>+ Sütun ekle</b> ile <code>{{Müşteri}} · {{Hizmet}}</code> gibi başlıklar kur.</li>
+  <li><b>Tarih sütunu</b> zorunlu. Gerçek tarihler, formül sonuçları ve <code>10.11.2026</code>, <code>2026-11-10</code> gibi metinler çalışır.</li>
+  <li><b>Saat</b> isteğe bağlı. Yoksa etkinlik tüm gün olur. Saat içeren tarih hücresi de olur.</li>
+  <li><b>Süre</b> dakika (<code>90</code>), saat (<code>1,5 saat</code>) ya da <code>1:30</code>. Varsayılan 60 dakika. İstersen <b>Bitiş tarihi</b> / <b>Bitiş saati</b> sütunu kullan.</li>
+  <li><b>Diğer alanlar</b>: yer, açıklama (o da şablon), katılımcı e-postaları (virgülle), renk (1–11 ya da <code>mavi</code>, <code>domates</code> gibi ad), tekrar (<code>günlük</code>, <code>haftalık</code>, <code>aylık</code>, <code>yıllık</code>) ve isteğe bağlı tekrar sayısı, hatırlatma dakikası.</li>
+  <li><b>İptal sütunu</b>: <code>evet</code>, <code>x</code> yaz ya da onay kutusunu işaretle; sonraki senkronda o satırın etkinliği silinir.</li>
+</ul>
+<h2>4. Aktar</h2>
+<p><b>Tüm satırları aktar</b> ya da satırları seçip <b>Seçili satırları aktar</b>. Rowdate iki sütun ekler: <code>Rowdate Event ID</code> ve <code>Rowdate Status</code>. ID sütununa dokunma; satırı etkinliğe bağlayan odur. Değişmeyen satırlar sonraki seferde atlanır.</p>
+<h2>Canlı senkron (Pro)</h2>
+<p><b>Canlı senkron</b>'u işaretle; o sayfada yaptığın her düzenleme birkaç saniyede etkinliğe yansır. Formüllerin ya da başka betiklerin yaptığı değişiklikler tetiklemez; onlar için normal senkron çalıştır.</p>
+<h2>Sık görülen mesajlar</h2>
+<ul>
+  <li><b>Tarih anlaşılmadı</b>: hücre okunabilir bir tarih değil. Sütunu tarih biçimine al ya da <code>10.11.2026</code> yaz.</li>
+  <li><b>Bitiş, başlangıçtan önce</b>: bitiş saatini ya da süreyi kontrol et.</li>
+  <li><b>Bu takvime yazma iznin yok</b>: takvim sahibinden "Etkinliklerde değişiklik yapma" izni iste ya da başka takvim seç.</li>
+  <li><b>Takvimde etkinlik bulunamadı</b>: Takvim'de silinmiş; sonraki senkronda yeniden oluşur.</li>
+</ul>
+<p>Takıldığın yer olursa yaz: <a data-support href="#"></a></p>
+</div>
+</main>
+<footer class="site"><div class="wrap"><div>© 2026 Rowdate · CodEven</div><div><a href="./">Home</a><a href="privacy">Privacy</a><a href="terms">Terms</a></div></div></footer>
+<script src="site.js"></script>
+</body>
+</html>
