@@ -1,9 +1,9 @@
 // Fill these in after the Marketplace listing and Lemon Squeezy products exist (see LAUNCH.md).
 var ROWDATE = {
   installUrl: 'https://workspace.google.com/marketplace',
-  checkoutMonthly: '',
-  checkoutYearly: '',
-  checkoutLifetime: '',
+  checkoutMonthly: 'https://codeven.lemonsqueezy.com/checkout/buy/861dad6c-44d4-4a90-b4ab-3ecbf3f1d01b',
+  checkoutYearly: 'https://codeven.lemonsqueezy.com/checkout/buy/729bf3db-746f-4509-98b4-0347939a7965',
+  checkoutLifetime: 'https://codeven.lemonsqueezy.com/checkout/buy/0bc185e6-8174-4d80-a806-9a5fdfaf21c0',
   supportEmail: 'CodEven@codeven.io'
 };
 
