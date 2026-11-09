@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sync appointments from Google Sheets to Google Calendar</title>
+<meta name="description" content="Keep a booking sheet and Google Calendar in step: one event per appointment, reschedules move the event, cancellations delete it. A sheet layout you can copy.">
+<link rel="canonical" href="https://rowdate.codeven.io/sync-appointments-google-sheets-calendar">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-lang="en">
+<header class="top"><div class="wrap">
+  <a class="brand" href="./"><img src="logo.svg" alt="" width="30" height="30"> Rowdate</a>
+  <nav><a href="./#pricing">Pricing</a> <a href="guide">Guide</a></nav>
+</div></header>
+<main class="doc">
+
+<h1>Sync appointments from Google Sheets to Google Calendar</h1>
+<p class="updated">For salons, clinics, tutors, studios and anyone who takes bookings in a spreadsheet.</p>
+
+<p>A spreadsheet is a fine booking book: everyone can edit it, formulas count the week's revenue, and it costs nothing. The trouble starts when the calendar has to match it. Somebody reschedules in the sheet, nobody updates the calendar, and two clients turn up at 10:00.</p>
+<p>The fix is to make the sheet the source of truth and let the calendar follow it.</p>
+
+<h2>A sheet layout that works</h2>
+<table class="tbl">
+  <tr><th>Client</th><th>Service</th><th>Date</th><th>Time</th><th>Duration</th><th>Staff email</th><th>Cancel</th></tr>
+  <tr><td>Ayşe Demir</td><td>Haircut</td><td>12.11.2026</td><td>10:00</td><td>45</td><td>elif@salon.com</td><td></td></tr>
+  <tr><td>Mehmet Kaya</td><td>Colour</td><td>12.11.2026</td><td>11:00</td><td>90</td><td>can@salon.com</td><td>yes</td></tr>
+  <tr><td>Zeynep Ak</td><td>Physio</td><td>13.11.2026</td><td>09:30</td><td>1 h</td><td></td><td></td></tr>
+</table>
+<ul>
+  <li><b>One row per appointment.</b> Keep row 1 for column names.</li>
+  <li><b>Date and time in separate columns</b> is easiest to type. A single date-time cell works too.</li>
+  <li><b>Duration</b> in minutes (<code>45</code>), hours (<code>1 h</code>) or <code>1:30</code>, or an end time column instead.</li>
+  <li><b>Cancel</b> instead of deleting the row, so the history stays in the sheet.</li>
+  <li><b>Staff email</b> as a guest if each person should see their own bookings in their calendar.</li>
+</ul>
+
+<h2>Setting up the sync with Rowdate</h2>
+<ol>
+  <li><b>Extensions › Rowdate › Open Rowdate</b>, then pick the calendar (a shared "Bookings" calendar works well).</li>
+  <li>Title: <code>{{Client}} · {{Service}}</code>. Date, time and duration are matched from the headers above.</li>
+  <li>Map <b>Cancel</b> and, if you like, <b>Guests</b> to the staff email column. Tick "Email invitations to guests" only if you want them to get an email.</li>
+  <li><b>Sync all rows.</b></li>
+</ol>
+<p>From then on:</p>
+<ul>
+  <li><b>Reschedule</b>: change the date or time in the row and sync. The same event moves; the old slot is freed.</li>
+  <li><b>Cancel</b>: write <code>yes</code> and sync. The event is deleted, the row stays.</li>
+  <li><b>New booking</b>: add a row and sync. Unchanged rows are skipped, so it is quick.</li>
+  <li><b>Live sync</b> (Pro): every edit you make in the sheet updates the calendar within seconds, without pressing Sync.</li>
+</ul>
+
+<h2>Good to know</h2>
+<ul>
+  <li>The sheet wins. If someone deletes the event in Calendar, the next sync creates it again from the row. Use the cancel column to remove it.</li>
+  <li>Rowdate only touches the events it created from your rows. Your other events are never read.</li>
+  <li>Your data stays in your spreadsheet and your calendar. Rowdate runs inside Google Apps Script and has no servers of its own.</li>
+  <li>Reminders: map a column with minutes (<code>30</code>) to get a reminder before each appointment.</li>
+</ul>
+
+<div class="cta-box">
+  <h2>Try Rowdate</h2>
+  <p>100 events a month are free. Pro adds unlimited events and live sync for $5 a month, $39 a year or $79 once.</p>
+  <p><a class="btn primary" href="guide">Setup guide</a> <a class="btn ghost" href="./#pricing">Pricing</a></p>
+</div>
+
+<h2>More guides</h2>
+<ul>
+  <li><a href="google-sheets-to-google-calendar">Create Google Calendar events from Google Sheets</a></li>
+  <li><a href="duplicate-events-google-sheets-calendar">Why syncing creates duplicate events, and how to stop it</a></li>
+</ul>
+</main>
+<footer class="site"><div class="wrap">
+  <div>© 2026 Rowdate · CodEven<br><small>Google Sheets™, Google Calendar™ and Google Apps Script™ are trademarks of Google LLC. Rowdate is not affiliated with Google.</small></div>
+  <div><a href="guide">Guide</a><a href="privacy">Privacy</a><a href="terms">Terms</a><a data-support href="#"></a></div>
+</div></footer>
+<script src="site.js"></script>
+</body>
+</html>

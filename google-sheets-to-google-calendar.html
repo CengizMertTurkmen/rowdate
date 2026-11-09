@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to create Google Calendar events from Google Sheets (2026)</title>
+<meta name="description" content="Three ways to turn spreadsheet rows into Google Calendar events: import a CSV, write an Apps Script, or use an add-on that keeps them in sync. With a copy-paste script.">
+<link rel="canonical" href="https://rowdate.codeven.io/google-sheets-to-google-calendar">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-lang="en">
+<header class="top"><div class="wrap">
+  <a class="brand" href="./"><img src="logo.svg" alt="" width="30" height="30"> Rowdate</a>
+  <nav><a href="./#pricing">Pricing</a> <a href="guide">Guide</a></nav>
+</div></header>
+<main class="doc">
+
+<h1>How to create Google Calendar events from Google Sheets</h1>
+<p class="updated">Three ways, from free and manual to fully synced. Updated November 2026.</p>
+
+<p>You have bookings, classes, shifts or deadlines in a spreadsheet and you want them on a calendar. Google Sheets has no built-in "send to Calendar" button, so you have three options.</p>
+
+<h2>Option 1: Export a CSV and import it into Google Calendar</h2>
+<p>Free and needs no code, but it is a one-time copy.</p>
+<ol>
+  <li>Rename your columns to the names Google Calendar expects: <code>Subject</code>, <code>Start Date</code>, <code>Start Time</code>, <code>End Date</code>, <code>End Time</code>, <code>All Day Event</code>, <code>Description</code>, <code>Location</code>.</li>
+  <li>Dates must look like <code>11/10/2026</code> and times like <code>10:00 AM</code>.</li>
+  <li>In Sheets: <b>File › Download › Comma-separated values (.csv)</b>.</li>
+  <li>In Google Calendar: <b>Settings › Import &amp; export › Import</b>, pick the file and the calendar.</li>
+</ol>
+<p><b>The catch:</b> nothing links the row to the event. If a time changes, you edit the event by hand, or import again and get a duplicate.</p>
+
+<h2>Option 2: A small Apps Script</h2>
+<p>Free, and it can remember which row made which event. Open <b>Extensions › Apps Script</b>, paste this, and run <code>createEvents</code>. The sheet needs columns A <code>Title</code>, B <code>Start</code>, C <code>End</code> (date and time in each cell) and an empty D <code>Event ID</code>.</p>
+<pre><code>function createEvents() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const rows = sheet.getDataRange().getValues();
+  const calendar = CalendarApp.getDefaultCalendar();
+  for (let i = 1; i &lt; rows.length; i++) {
+    const [title, start, end, eventId] = rows[i];
+    if (!title || !start || !end || eventId) continue; // skip empty or already created rows
+    const event = calendar.createEvent(title, new Date(start), new Date(end));
+    sheet.getRange(i + 1, 4).setValue(event.getId());
+  }
+}</code></pre>
+<p>It works for a simple list. What it does not do, and what people usually end up adding:</p>
+<ul>
+  <li><b>Updates.</b> Rows that already have an ID are skipped, so a changed time never reaches the calendar. You need to read the event back, compare and update it.</li>
+  <li><b>Cancellations.</b> Deleting a row leaves the event behind.</li>
+  <li><b>Separate date and time columns</b>, durations instead of end times, and text dates like <code>10.11.2026</code>.</li>
+  <li><b>Time zones.</b> A time-only cell is stored as a date in 1899, and old time zone offsets can shift it by minutes.</li>
+  <li><b>Errors.</b> One bad cell stops the whole run.</li>
+</ul>
+
+<h2>Option 3: An add-on that keeps the sheet and calendar in sync</h2>
+<p>This is what <a href="./">Rowdate</a> does. Open it from <b>Extensions › Rowdate</b> and:</p>
+<ol>
+  <li>Pick a calendar, including shared calendars you can edit.</li>
+  <li>Match your columns. Title is a template like <code>{{Client}} · {{Service}}</code>; date, time and duration can be separate columns; Rowdate guesses them from your headers.</li>
+  <li>Click <b>Sync all rows</b>. Each row gets an event ID and a status. Change a row and sync again: the same event moves, nothing is duplicated. Write <code>yes</code> in a cancel column and the event is deleted.</li>
+</ol>
+<p>Dates from formulas (<code>=A2+7</code>, <code>=WORKDAY()</code>) and imported data are read in your spreadsheet's time zone. A row that cannot be read gets a clear message such as "Date not recognised: 32.13.2026" and the other rows still sync.</p>
+
+<h2>Which one should you use?</h2>
+<ul>
+  <li>A one-off list you will never change: <b>CSV import</b>.</li>
+  <li>You like code and the list is simple: <b>the script above</b>.</li>
+  <li>The sheet keeps changing (bookings, rosters, schedules) or other people edit it: <b>a sync add-on</b>.</li>
+</ul>
+
+<div class="cta-box">
+  <h2>Try Rowdate</h2>
+  <p>100 events a month are free. Pro adds unlimited events and live sync for $5 a month, $39 a year or $79 once.</p>
+  <p><a class="btn primary" href="guide">Setup guide</a> <a class="btn ghost" href="./#pricing">Pricing</a></p>
+</div>
+
+<h2>More guides</h2>
+<ul>
+  <li><a href="sync-appointments-google-sheets-calendar">Sync appointments and bookings to Google Calendar</a></li>
+  <li><a href="duplicate-events-google-sheets-calendar">Why syncing creates duplicate events, and how to stop it</a></li>
+</ul>
+</main>
+<footer class="site"><div class="wrap">
+  <div>© 2026 Rowdate · CodEven<br><small>Google Sheets™, Google Calendar™ and Google Apps Script™ are trademarks of Google LLC. Rowdate is not affiliated with Google.</small></div>
+  <div><a href="guide">Guide</a><a href="privacy">Privacy</a><a href="terms">Terms</a><a data-support href="#"></a></div>
+</div></footer>
+<script src="site.js"></script>
+</body>
+</html>

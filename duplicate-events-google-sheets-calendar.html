@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stop duplicate events when syncing Google Sheets to Calendar</title>
+<meta name="description" content="Re-running a Sheets-to-Calendar import creates duplicate events because nothing links the row to its event. How to clean them up and how to sync without duplicates.">
+<link rel="canonical" href="https://rowdate.codeven.io/duplicate-events-google-sheets-calendar">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-lang="en">
+<header class="top"><div class="wrap">
+  <a class="brand" href="./"><img src="logo.svg" alt="" width="30" height="30"> Rowdate</a>
+  <nav><a href="./#pricing">Pricing</a> <a href="guide">Guide</a></nav>
+</div></header>
+<main class="doc">
+
+<h1>Stop duplicate events when syncing Google Sheets to Calendar</h1>
+<p class="updated">Why it happens, how to clean up, and how to avoid it next time.</p>
+
+<h2>Why the duplicates appear</h2>
+<p>Most ways of getting rows into Google Calendar (CSV import, a quick script, simple add-ons) <b>create</b> events. They do not remember which event belongs to which row. So when you change a row and run the import again, the tool has no way to find the old event: it creates a new one, and the old one stays.</p>
+<p>The same thing happens when the import runs on a schedule, when two people run it, or when a run fails halfway and you start it again.</p>
+
+<h2>Cleaning up the duplicates you already have</h2>
+<ul>
+  <li><b>If everything came from one import into its own calendar</b>, the quickest fix is to delete that calendar (Settings › the calendar › Remove calendar) and sync again into a fresh one.</li>
+  <li><b>If the events are mixed with others</b>, search Google Calendar for a word from the titles, open the list view and delete the extra copies. There is no bulk "remove duplicates" button in Google Calendar.</li>
+  <li>Before you sync again, make sure the tool you use can update events, or you will be back here next week.</li>
+</ul>
+
+<h2>Syncing without duplicates</h2>
+<p>The reliable approach is to store the event ID next to each row. Then a re-run can do the right thing for every row:</p>
+<ul>
+  <li>No ID yet: create the event and write the ID into the row.</li>
+  <li>ID present and the row changed: update that event.</li>
+  <li>ID present and nothing changed: skip it.</li>
+  <li>Row marked cancelled: delete that event.</li>
+</ul>
+<p>This is how <a href="./">Rowdate</a> works. It adds two columns to your sheet, <code>Rowdate Event ID</code> and <code>Rowdate Status</code>, and uses the ID to update the same event every time. Running Sync twice in a row changes nothing the second time; every row just says "Unchanged".</p>
+<p>If you write your own script, the same idea applies: see the script in <a href="google-sheets-to-google-calendar">our Sheets to Calendar guide</a> and extend it to read the event by ID with <code>CalendarApp.getEventById()</code> and update its time and title.</p>
+
+<h2>Other things that look like duplicates</h2>
+<ul>
+  <li><b>Events at the wrong time</b> next to the right ones: a time zone mismatch between the spreadsheet (File › Settings) and the calendar. Make them the same.</li>
+  <li><b>Events on the wrong day</b>: <code>11/10/2026</code> means 10 November in the US and 11 October in Europe. Use your spreadsheet's locale consistently, or write dates as <code>2026-11-10</code>.</li>
+  <li><b>Recurring events multiplied</b>: a "repeat weekly" row that is also listed once per week in the sheet. Use one or the other.</li>
+</ul>
+
+<div class="cta-box">
+  <h2>Try Rowdate</h2>
+  <p>100 events a month are free. Pro adds unlimited events and live sync for $5 a month, $39 a year or $79 once.</p>
+  <p><a class="btn primary" href="guide">Setup guide</a> <a class="btn ghost" href="./#pricing">Pricing</a></p>
+</div>
+
+<h2>More guides</h2>
+<ul>
+  <li><a href="google-sheets-to-google-calendar">Create Google Calendar events from Google Sheets</a></li>
+  <li><a href="sync-appointments-google-sheets-calendar">Sync appointments and bookings to Google Calendar</a></li>
+</ul>
+</main>
+<footer class="site"><div class="wrap">
+  <div>© 2026 Rowdate · CodEven<br><small>Google Sheets™, Google Calendar™ and Google Apps Script™ are trademarks of Google LLC. Rowdate is not affiliated with Google.</small></div>
+  <div><a href="guide">Guide</a><a href="privacy">Privacy</a><a href="terms">Terms</a><a data-support href="#"></a></div>
+</div></footer>
+<script src="site.js"></script>
+</body>
+</html>
