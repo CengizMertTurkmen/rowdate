@@ -13,7 +13,7 @@
 <main class="doc">
 <div data-l="en">
 <h1>Privacy policy</h1>
-<p class="updated">Last updated: 4 November 2026</p>
+<p class="updated">Last updated: 14 November 2026</p>
 <p>Rowdate is a Google Sheets add-on, operated by CodEven (Cengiz Mert Türkmen, sole proprietorship, Turkey), that creates, updates and deletes Google Calendar events from rows of the spreadsheet you open it in.</p>
 <h2>What Rowdate accesses</h2>
 <ul>
@@ -28,18 +28,22 @@
   <li>Values from the rows you sync are sent to Google Calendar to make the events. They stay in your spreadsheet and your calendar.</li>
   <li>Your column choices, a fingerprint of each synced event (to skip unchanged rows) and a monthly usage counter are stored in Apps Script document and user properties inside your Google account.</li>
   <li>If you activate Pro, your license key is sent to Lemon Squeezy to check it, and stored in your Apps Script user properties.</li>
-  <li>Rowdate has no servers of its own and keeps no copy of your spreadsheet or calendar data. We do not sell, share or use your data for advertising, and we do not use it to train AI models.</li>
+  <li>Google user data is used to run the spreadsheet-to-calendar sync. Rowdate has no server that stores a copy of your sheets or calendars. Lemon Squeezy receives the Pro license key for validation. It does not receive spreadsheet rows, calendar details or Google OAuth tokens from Rowdate.</li>
+  <li>We do not sell Google user data or use it for advertising or AI training.</li>
 </ul>
+<h2>How Google user data is protected</h2>
+<p>The add-on runs in Google Apps Script under the permissions you grant. Google stores the spreadsheet, calendar and Apps Script properties. Rowdate sends requests over HTTPS and uses Google’s Apps Script OAuth token to authorize Calendar API requests. Your Google account and its sharing settings control access to your spreadsheets and calendars.</p>
 <h2>Google API data</h2>
 <p>Rowdate's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
-<h2>Deleting your data</h2>
-<p>Uninstall Rowdate from Extensions › Add-ons › Manage add-ons, delete the two Rowdate columns, and remove the events from your calendar if you want them gone. Payment records are kept by Lemon Squeezy, our merchant of record, under its own policy.</p>
+<h2>Retention and deletion</h2>
+<p>Source rows and synchronized events remain in your Google account until you or another authorized user deletes them. Rowdate stores event IDs and sync status in two sheet columns and keeps mapping settings and synchronization fingerprints in Apps Script properties. These settings and monthly usage counters have no automatic expiry in Rowdate. A successful cancellation removes the corresponding calendar event and its stored synchronization fingerprint.</p>
+<p>Before uninstalling, switch off Live sync in each connected spreadsheet to remove the trigger you installed. If you use Pro, choose Remove next to the license to remove its saved key. Remove generated events from your calendar and the two Rowdate columns from your sheet when you no longer need them. You can uninstall Rowdate from Extensions › Add-ons › Manage add-ons and revoke access in <a href="https://myaccount.google.com/connections">your Google Account</a>. For help with remaining settings or usage records, contact CodEven below. Lemon Squeezy retains payment records under its own policy.</p>
 <h2>Contact</h2>
 <p><a data-support href="#"></a></p>
 </div>
 <div data-l="tr">
 <h1>Gizlilik politikası</h1>
-<p class="updated">Son güncelleme: 4 Kasım 2026</p>
+<p class="updated">Son güncelleme: 14 Kasım 2026</p>
 <p>Rowdate, CodEven (Cengiz Mert Türkmen, şahıs işletmesi, Türkiye) tarafından işletilen; açtığın tablonun satırlarından Google Takvim etkinliği oluşturan, güncelleyen ve silen bir Google E-Tablolar eklentisidir.</p>
 <h2>Rowdate neye erişir</h2>
 <ul>
@@ -54,12 +58,16 @@
   <li>Aktardığın satırların değerleri etkinlik oluşturmak için Google Takvim'e gider; tablonda ve takviminde kalır.</li>
   <li>Sütun seçimlerin, her etkinliğin parmak izi (değişmeyen satırları atlamak için) ve aylık kullanım sayacı Google hesabındaki Apps Script özelliklerinde saklanır.</li>
   <li>Pro'yu etkinleştirirsen lisans anahtarın kontrol için Lemon Squeezy'ye gider ve Apps Script kullanıcı özelliklerinde saklanır.</li>
-  <li>Rowdate'in kendi sunucusu yoktur; tablonun ya da takviminin kopyasını tutmaz. Verini satmayız, paylaşmayız, reklam ya da yapay zekâ eğitimi için kullanmayız.</li>
+  <li>Google kullanıcı verileri, tablo ile takvim arasındaki senkron için kullanılır. Rowdate, tablo veya takvim kopyası saklayan bir sunucu işletmez. Lemon Squeezy doğrulama için Pro lisans anahtarını alır. Rowdate, Lemon Squeezy'ye tablo satırlarını, takvim bilgilerini veya Google OAuth belirtecini göndermez.</li>
+  <li>Google kullanıcı verilerini satmayız, reklam veya yapay zekâ eğitimi için kullanmayız.</li>
 </ul>
+<h2>Google kullanıcı verilerini nasıl koruyoruz</h2>
+<p>Eklenti, verdiğin izinlerle Google Apps Script üzerinde çalışır. Tabloları, takvimleri ve Apps Script özelliklerini Google saklar. Rowdate istekleri HTTPS üzerinden gönderir ve Takvim API’si isteklerini Google’ın Apps Script OAuth belirteciyle yetkilendirir. Tablo ve takvimlerine erişimi Google hesabın ve paylaşım ayarların belirler.</p>
 <h2>Google API verisi</h2>
 <p>Rowdate'in Google API'lerinden aldığı bilgiyi kullanımı ve aktarımı, Sınırlı Kullanım şartları dahil <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>'ye uyar.</p>
-<h2>Verini silmek</h2>
-<p>Rowdate'i Uzantılar › Eklentiler › Eklentileri yönet'ten kaldır, iki Rowdate sütununu sil, istersen etkinlikleri takviminden sil. Ödeme kayıtları satıcı kaydı Lemon Squeezy'de kendi politikasına göre tutulur.</p>
+<h2>Saklama ve silme</h2>
+<p>Kaynak satırlar ve senkronlanan etkinlikler, sen veya başka bir yetkili kullanıcı silene kadar Google hesabında kalır. Rowdate etkinlik kimliklerini ve senkron durumunu iki tablo sütununda, sütun eşlemelerini ve senkron parmak izlerini Apps Script özelliklerinde tutar. Bu ayarlar ve aylık kullanım sayaçları Rowdate tarafından süre sonunda otomatik silinmez. Başarılı bir iptal, ilgili takvim etkinliğini ve kayıtlı senkron parmak izini siler.</p>
+<p>Eklentiyi kaldırmadan önce bağlı her tabloda Canlı senkronu kapat. Böylece kurduğun tetikleyici kaldırılır. Pro kullanıyorsan kayıtlı anahtarı silmek için lisansın yanındaki Kaldır seçeneğini kullan. Artık gerekmeyen etkinlikleri takviminden, iki Rowdate sütununu da tablonun içinden sil. Rowdate’i Uzantılar › Eklentiler › Eklentileri yönet bölümünden kaldırabilir ve <a href="https://myaccount.google.com/connections">Google Hesabından</a> erişimi iptal edebilirsin. Kalan ayarlar veya kullanım kayıtları için aşağıdaki adresten CodEven’a ulaşabilirsin. Lemon Squeezy ödeme kayıtlarını kendi politikasına göre saklar.</p>
 <h2>İletişim</h2>
 <p><a data-support href="#"></a></p>
 </div>
