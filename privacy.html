@@ -13,7 +13,7 @@
 <main class="doc">
 <div data-l="en">
 <h1>Privacy policy</h1>
-<p class="updated">Last updated: 14 November 2026</p>
+<p class="updated">Last updated: 15 November 2026</p>
 <p>Rowdate is a Google Sheets add-on, operated by CodEven (Cengiz Mert Türkmen, sole proprietorship, Turkey), that creates, updates and deletes Google Calendar events from rows of the spreadsheet you open it in.</p>
 <h2>What Rowdate accesses</h2>
 <ul>
@@ -23,14 +23,14 @@
   <li><b>Sidebar and triggers</b> (<code>script.container.ui</code>, <code>script.scriptapp</code>): shows the sidebar, and for Pro live sync, installs an on-edit trigger on that spreadsheet only.</li>
   <li><b>External requests</b> (<code>script.external_request</code>): used only to call the Google Calendar API (www.googleapis.com) and Lemon Squeezy's license API (api.lemonsqueezy.com).</li>
 </ul>
-<h2>Where data goes and is stored</h2>
+<h2>Who receives Google user data</h2>
+<p>Rowdate uses Google user data to synchronize the rows you choose with the calendar you select. Here is who receives that data and why.</p>
 <ul>
-  <li>Values from the rows you sync are sent to Google Calendar to make the events. They stay in your spreadsheet and your calendar.</li>
-  <li>Your column choices, a fingerprint of each synced event (to skip unchanged rows) and a monthly usage counter are stored in Apps Script document and user properties inside your Google account.</li>
-  <li>If you activate Pro, your license key is sent to Lemon Squeezy to check it, and stored in your Apps Script user properties.</li>
-  <li>Google user data is used to run the spreadsheet-to-calendar sync. Rowdate has no server that stores a copy of your sheets or calendars. Lemon Squeezy receives the Pro license key for validation. It does not receive spreadsheet rows, calendar details or Google OAuth tokens from Rowdate.</li>
-  <li>We do not sell Google user data or use it for advertising or AI training.</li>
+  <li><b>Google (Apps Script and Google Calendar).</b> The add-on runs in Google Apps Script. Rowdate sends Google Calendar the selected calendar ID and the mapped event details, such as title, date, time, location, description and any guest email addresses you include. The Calendar API uses that data to create and update your events. To update or delete an existing event, Rowdate also sends its event ID. Apps Script stores your column mapping, sync fingerprints and usage counters in Google’s document and user properties.</li>
+  <li><b>People with access to the selected calendar and guests you add.</b> Calendar users can see synchronized event details according to that calendar’s sharing settings. If you add guests, Google Calendar receives their email addresses and can share the event with them. If you enable invitation emails, Google Calendar sends invitations or updates to those guests.</li>
 </ul>
+<p>Beyond the transfers described above, Rowdate does not share, transfer or disclose Google user data to third parties. CodEven does not receive spreadsheet or calendar data on its servers and does not sell Google user data or use it for advertising or AI training.</p>
+<p>If you activate Pro, Rowdate sends your Pro license key to Lemon Squeezy for validation and stores the key in Apps Script user properties. For license validation, Lemon Squeezy receives only the key from Rowdate. Rowdate does not send it spreadsheet rows, calendar details, guest email addresses or Google OAuth tokens.</p>
 <h2>How Google user data is protected</h2>
 <p>The add-on runs in Google Apps Script under the permissions you grant. Google stores the spreadsheet, calendar and Apps Script properties. Rowdate sends requests over HTTPS and uses Google’s Apps Script OAuth token to authorize Calendar API requests. Your Google account and its sharing settings control access to your spreadsheets and calendars.</p>
 <h2>Google API data</h2>
@@ -43,7 +43,7 @@
 </div>
 <div data-l="tr">
 <h1>Gizlilik politikası</h1>
-<p class="updated">Son güncelleme: 14 Kasım 2026</p>
+<p class="updated">Son güncelleme: 15 Kasım 2026</p>
 <p>Rowdate, CodEven (Cengiz Mert Türkmen, şahıs işletmesi, Türkiye) tarafından işletilen; açtığın tablonun satırlarından Google Takvim etkinliği oluşturan, güncelleyen ve silen bir Google E-Tablolar eklentisidir.</p>
 <h2>Rowdate neye erişir</h2>
 <ul>
@@ -53,14 +53,14 @@
   <li><b>Kenar paneli ve tetikleyici</b> (<code>script.container.ui</code>, <code>script.scriptapp</code>): paneli gösterir; Pro canlı senkron için yalnızca o tabloya bir düzenleme tetikleyicisi kurar.</li>
   <li><b>Dış istekler</b> (<code>script.external_request</code>): yalnızca Google Takvim API'si (www.googleapis.com) ve Lemon Squeezy lisans API'si (api.lemonsqueezy.com) için.</li>
 </ul>
-<h2>Veri nereye gider, nerede durur</h2>
+<h2>Google kullanıcı verilerini kimler alır?</h2>
+<p>Rowdate, Google kullanıcı verilerini seçtiğin satırlarla seçtiğin takvimi eşitlemek için kullanır. Bu veriyi kimlerin hangi amaçla aldığını aşağıda açıklıyoruz.</p>
 <ul>
-  <li>Aktardığın satırların değerleri etkinlik oluşturmak için Google Takvim'e gider; tablonda ve takviminde kalır.</li>
-  <li>Sütun seçimlerin, her etkinliğin parmak izi (değişmeyen satırları atlamak için) ve aylık kullanım sayacı Google hesabındaki Apps Script özelliklerinde saklanır.</li>
-  <li>Pro'yu etkinleştirirsen lisans anahtarın kontrol için Lemon Squeezy'ye gider ve Apps Script kullanıcı özelliklerinde saklanır.</li>
-  <li>Google kullanıcı verileri, tablo ile takvim arasındaki senkron için kullanılır. Rowdate, tablo veya takvim kopyası saklayan bir sunucu işletmez. Lemon Squeezy doğrulama için Pro lisans anahtarını alır. Rowdate, Lemon Squeezy'ye tablo satırlarını, takvim bilgilerini veya Google OAuth belirtecini göndermez.</li>
-  <li>Google kullanıcı verilerini satmayız, reklam veya yapay zekâ eğitimi için kullanmayız.</li>
+  <li><b>Google (Apps Script ve Google Takvim).</b> Eklenti Google Apps Script üzerinde çalışır. Rowdate, seçilen takvimin kimliğini ve eşlediğin başlık, tarih, saat, konum, açıklama ve eklediğin katılımcı e-posta adresleri gibi etkinlik bilgilerini Google Takvim’e gönderir. Takvim API’si bu veriyi etkinlik oluşturmak ve güncellemek için kullanır. Rowdate, mevcut bir etkinliği güncellemek veya silmek için etkinliğin kimliğini de gönderir. Apps Script sütun eşlemelerini, senkron parmak izlerini ve kullanım sayaçlarını Google’ın doküman ve kullanıcı özelliklerinde saklar.</li>
+  <li><b>Seçilen takvime erişimi olan kişiler ve eklediğin katılımcılar.</b> Takvime erişimi olan kişiler, takvimin paylaşım ayarlarına göre senkronlanan etkinlik bilgilerini görebilir. Katılımcı eklersen Google Takvim onların e-posta adreslerini alır ve etkinliği onlarla paylaşabilir. Davet e-postalarını etkinleştirirsen Google Takvim bu katılımcılara davet ya da güncelleme gönderir.</li>
 </ul>
+<p>Rowdate, yukarıda belirtilen aktarımlar dışında Google kullanıcı verilerini üçüncü taraflarla paylaşmaz, üçüncü taraflara aktarmaz veya açıklamaz. CodEven sunucularına tablo veya takvim verisi gönderilmez. Google kullanıcı verilerini satmayız, reklam veya yapay zekâ eğitimi için kullanmayız.</p>
+<p>Pro’yu etkinleştirirsen Rowdate, Pro lisans anahtarını doğrulama için Lemon Squeezy’ye gönderir ve anahtarı Apps Script kullanıcı özelliklerinde saklar. Lemon Squeezy, lisans doğrulaması için Rowdate’ten yalnızca anahtarı alır. Rowdate, Lemon Squeezy’ye tablo satırlarını, takvim bilgilerini, katılımcı e-posta adreslerini veya Google OAuth belirteçlerini göndermez.</p>
 <h2>Google kullanıcı verilerini nasıl koruyoruz</h2>
 <p>Eklenti, verdiğin izinlerle Google Apps Script üzerinde çalışır. Tabloları, takvimleri ve Apps Script özelliklerini Google saklar. Rowdate istekleri HTTPS üzerinden gönderir ve Takvim API’si isteklerini Google’ın Apps Script OAuth belirteciyle yetkilendirir. Tablo ve takvimlerine erişimi Google hesabın ve paylaşım ayarların belirler.</p>
 <h2>Google API verisi</h2>
