@@ -1,7 +1,4 @@
-// Fill these in after the Marketplace listing and Lemon Squeezy products exist (see LAUNCH.md).
 var ROWDATE = {
-  // Google review: no Marketplace links until the listing is approved (Tellal was rejected over this). Swap in the listing URL then.
-  installUrl: 'guide',
   checkoutMonthly: 'https://codeven.lemonsqueezy.com/checkout/buy/861dad6c-44d4-4a90-b4ab-3ecbf3f1d01b',
   checkoutYearly: 'https://codeven.lemonsqueezy.com/checkout/buy/729bf3db-746f-4509-98b4-0347939a7965',
   checkoutLifetime: 'https://codeven.lemonsqueezy.com/checkout/buy/0bc185e6-8174-4d80-a806-9a5fdfaf21c0',
@@ -28,13 +25,12 @@ var ROWDATE = {
     b.addEventListener('click', function () { setLang(b.getAttribute('data-set')); });
   });
 
-  document.querySelectorAll('[data-install]').forEach(function (a) { a.href = ROWDATE.installUrl; });
   document.querySelectorAll('[data-support]').forEach(function (a) {
     a.href = 'mailto:' + ROWDATE.supportEmail; if (!a.textContent.trim()) a.textContent = ROWDATE.supportEmail;
   });
   document.querySelectorAll('[data-checkout]').forEach(function (a) {
     var url = ROWDATE['checkout' + a.getAttribute('data-checkout')];
-    a.href = url || ROWDATE.installUrl;
+    if (url) a.href = url;
   });
 
   // Hero: each row lights up, then its event lands in the week. Runs once.
