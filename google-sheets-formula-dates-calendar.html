@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sync Google Sheets Formula Dates to Google Calendar | Rowdate</title>
+<meta name="description" content="Send WORKDAY and calculated deadline dates from Google Sheets to Google Calendar. Learn how to map formula dates and when to sync after recalculation.">
+<link rel="canonical" href="https://rowdate.codeven.io/google-sheets-formula-dates-calendar">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Rowdate">
+<meta property="og:title" content="Sync Google Sheets Formula Dates to Google Calendar | Rowdate">
+<meta property="og:description" content="A practical guide to calculated deadline dates, working days and Calendar sync.">
+<meta property="og:url" content="https://rowdate.codeven.io/google-sheets-formula-dates-calendar">
+<meta property="og:image" content="https://rowdate.codeven.io/shot-en-3-calendar.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="logo.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Sync Google Sheets formula dates to Google Calendar","datePublished":"2026-11-22","dateModified":"2026-11-22","url":"https://rowdate.codeven.io/google-sheets-formula-dates-calendar","author":{"@type":"Organization","name":"CodEven","url":"https://www.codeven.io"}}</script>
+</head><body data-lang="en">
+<header class="top"><div class="wrap"><a class="brand" href="./"><img src="logo.svg" alt="" width="30" height="30"> Rowdate</a><nav><a href="./#pricing">Pricing</a><a href="guide">Guide</a></nav></div></header>
+<main class="doc">
+<h1>Put calculated spreadsheet deadlines on Google Calendar</h1>
+<p class="updated">Formula dates and working days · Updated 22 November 2026</p>
+<p>A delivery date plus five working days. A follow-up one week after an appointment. If your schedule already lives in Google Sheets, calculate those dates there and send the results to Google Calendar with Rowdate.</p>
+<h2>1. Give each deadline its own row</h2>
+<p>Start with columns for <b>Task</b>, <b>Start date</b>, <b>Due date</b>, <b>Time</b> and <b>Duration</b>. Enter a real start date in B2, for example <code>=DATE(2026,12,4)</code>. Put the calculation in C2.</p>
+<ul><li><code>=B2+5</code> adds five calendar days.</li><li><code>=WORKDAY(B2,5)</code> adds five working days, skipping Saturday and Sunday.</li><li><code>=WORKDAY(B2,5,Holidays!A2:A20)</code> also skips the dates in a separate Holidays tab.</li></ul>
+<p>For Friday 4 December 2026, the first formula gives Wednesday 9 December. The second gives Friday 11 December. Your holiday list can move that deadline further.</p>
+<p>Format the result column using <b>Format › Number › Date</b>. Some spreadsheet locales require semicolons between formula arguments. Google's <a href="https://support.google.com/docs/answer/3093059?hl=en">WORKDAY reference</a> explains its arguments and optional holiday range.</p>
+<h2>2. Map the calculated date in Rowdate</h2>
+<ol><li><a href="https://workspace.google.com/marketplace/app/rowdate/1047319266412">Install Rowdate from Google Workspace Marketplace</a>, then open <b>Extensions › Rowdate › Open Rowdate</b>.</li><li>Choose a calendar you can edit. A separate test calendar is useful for the first few rows.</li><li>Map the title to Task, the date to Due date, and the time and duration to their columns.</li><li>Check the preview and click <b>Sync all rows</b>.</li></ol>
+<p>Rowdate reads the calculated value of a date-formatted cell using the spreadsheet's time zone. It does not send the formula text to Calendar. Keep the event ID and status columns Rowdate adds so later syncs can update the linked event.</p>
+<h2>3. Sync again after formulas change</h2>
+<p>Change a starting date, let Sheets finish calculating, then run <b>Sync all rows</b> again. Rowdate reads the new due dates and updates the linked events. Moving an event in Calendar does not change the formula in your sheet.</p>
+<p><b>Live sync has a specific limit.</b> Pro live sync responds to user edits on the mapped sheet and syncs the edited rows. A <code>TODAY()</code> recalculation at midnight, an API import, or a changed formula dependency on another row does not guarantee that the deadline row will sync. Run Sync all rows after those changes. Rowdate currently has no scheduled background polling for formula recalculations.</p>
+<p>Google's <a href="https://developers.google.com/apps-script/guides/triggers/installable">installable trigger documentation</a> explains why script executions and API requests do not trigger spreadsheet edit handlers.</p>
+<h2>If the event lands on the wrong day</h2>
+<ul><li>Check the spreadsheet's time zone under <b>File › Settings</b> and compare it with the calendar's time zone.</li><li>Make sure the calculated cell contains a date, rather than a text string or an error such as <code>#VALUE!</code>.</li><li>Read the row's status message before trying again.</li><li>Keep each event ID attached to its row when sorting or moving data.</li></ul>
+<div class="cta-box"><h2>Try a small schedule first</h2><p>Rowdate includes 100 events a month free. Try a few deadlines before deciding whether you need Pro.</p><p><a class="btn primary" href="https://workspace.google.com/marketplace/app/rowdate/1047319266412">Install Rowdate free</a> <a class="btn ghost" href="./#pricing">See pricing</a></p></div>
+<h2>Related guides</h2><ul><li><a href="google-sheets-to-google-calendar">Create Calendar events from Sheets</a></li><li><a href="duplicate-events-google-sheets-calendar">Avoid duplicate events when syncing again</a></li><li><a href="guide">Rowdate setup guide</a></li></ul>
+</main>
+<footer class="site"><div class="wrap"><div>© 2026 Rowdate · CodEven<br><small>Google Sheets™ and Google Calendar™ are trademarks of Google LLC. Rowdate is not affiliated with Google.</small></div><div><a href="guide">Guide</a><a href="privacy">Privacy</a><a href="terms">Terms</a><a data-support href="#"></a></div></div></footer><script src="site.js"></script>
+</body></html>
