@@ -110,3 +110,5 @@ main.doc .cta-box { margin-top: 40px; padding: 20px 24px; border-radius: 12px; b
 main.doc .cta-box h2 { margin-top: 0; }
 main.doc .cta-box .btn { margin: 4px 8px 4px 0; }
 footer.site small { color: var(--muted); font-size: 12px; }
+
+.langs a{padding:5px 8px;border-radius:5px;text-decoration:none}.langs a[aria-current="page"]{background:var(--wash);font-weight:700}

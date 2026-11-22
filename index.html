@@ -1,180 +1,174 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Google Sheets to Google Calendar Sync Add-on | Rowdate</title>
-<meta name="description" content="Turn Google Sheets rows into Google Calendar events and keep them in sync. Edit a row and the event updates, mark it cancelled and it is removed. 100 free events a month.">
-<link rel="canonical" href="https://rowdate.codeven.io/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Rowdate">
-<meta property="og:title" content="Google Sheets to Google Calendar Sync Add-on | Rowdate">
-<meta property="og:description" content="Turn Google Sheets rows into Google Calendar events and keep them in sync. Edit a row and the event updates, mark it cancelled and it is removed. 100 free events a month.">
-<meta property="og:url" content="https://rowdate.codeven.io/">
-<meta property="og:image" content="https://rowdate.codeven.io/shot-en-3-calendar.png">
-<meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Rowdate", "description": "Turn Google Sheets rows into Google Calendar events and keep them in sync. Edit a row and the event updates, mark it cancelled and it is removed. 100 free events a month.", "url": "https://rowdate.codeven.io/", "image": "https://rowdate.codeven.io/shot-en-3-calendar.png", "applicationCategory": "BusinessApplication", "applicationSubCategory": "Calendar and scheduling", "operatingSystem": "Web (Google Sheets add-on)", "installUrl": "https://workspace.google.com/marketplace/app/rowdate/1047319266412", "offers": [{"@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD"}, {"@type": "Offer", "name": "Pro monthly", "price": "5", "priceCurrency": "USD"}, {"@type": "Offer", "name": "Pro yearly", "price": "39", "priceCurrency": "USD"}, {"@type": "Offer", "name": "Lifetime", "price": "79", "priceCurrency": "USD"}], "publisher": {"@type": "Organization", "name": "CodEven", "url": "https://www.codeven.io"}}</script>
-<link rel="icon" href="logo.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body data-lang="en">
+<meta content="Turn Google Sheets rows into Google Calendar events and keep them in sync. Edit a row and the event updates, mark it cancelled and it is removed. 100 free events a month." name="description"/>
+<link href="https://rowdate.codeven.io/" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Rowdate" property="og:site_name"/>
+<meta content="Google Sheets to Google Calendar Sync Add-on | Rowdate" property="og:title"/>
+<meta content="Turn Google Sheets rows into Google Calendar events and keep them in sync. Edit a row and the event updates, mark it cancelled and it is removed. 100 free events a month." property="og:description"/>
+<meta content="https://rowdate.codeven.io/" property="og:url"/>
+<meta content="https://rowdate.codeven.io/shot-en-3-calendar.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Rowdate", "description": "Turn Google Sheets rows into Google Calendar events and keep them in sync. Edit a row and the event updates, mark it cancelled and it is removed. 100 free events a month.", "url": "https://rowdate.codeven.io/", "image": "https://rowdate.codeven.io/shot-en-3-calendar.png", "applicationCategory": "BusinessApplication", "applicationSubCategory": "Calendar and scheduling", "operatingSystem": "Web (Google Sheets add-on)", "installUrl": "https://workspace.google.com/marketplace/app/rowdate/1047319266412", "offers": [{"@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD"}, {"@type": "Offer", "name": "Pro monthly", "price": "5", "priceCurrency": "USD"}, {"@type": "Offer", "name": "Pro yearly", "price": "39", "priceCurrency": "USD"}, {"@type": "Offer", "name": "Lifetime", "price": "79", "priceCurrency": "USD"}], "publisher": {"@type": "Organization", "name": "CodEven", "url": "https://www.codeven.io"}, "inLanguage": "en"}</script>
+<link href="/logo.svg" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="/style.css" rel="stylesheet"/>
+<link href="https://rowdate.codeven.io/" hreflang="en" rel="alternate"/><link href="https://rowdate.codeven.io/tr/" hreflang="tr" rel="alternate"/><link href="https://rowdate.codeven.io/" hreflang="x-default" rel="alternate"/></head>
+<body data-fixed-lang="en" data-lang="en">
 <header class="top"><div class="wrap">
-  <a class="brand" href="./"><img src="logo.svg" alt="" width="30" height="30"> Rowdate</a>
-  <nav>
-    <a class="hide-sm" href="#how"><span data-l="en">How it works</span><span data-l="tr">Nasıl çalışır</span></a>
-    <a class="hide-sm" href="#pricing"><span data-l="en">Pricing</span><span data-l="tr">Fiyat</span></a>
-    <a href="guide"><span data-l="en">Guide</span><span data-l="tr">Rehber</span></a>
-    <span class="langs"><button data-set="tr" aria-pressed="false">TR</button> <button data-set="en" aria-pressed="false">EN</button></span>
-  </nav>
+<a class="brand" href="/"><img alt="" height="30" src="/logo.svg" width="30"/> Rowdate</a>
+<nav>
+<a class="hide-sm" href="#how"><span data-l="en">How it works</span></a>
+<a class="hide-sm" href="#pricing"><span data-l="en">Pricing</span></a>
+<a href="/guide"><span data-l="en">Guide</span></a>
+<span class="langs"><a aria-current="page" href="/" hreflang="en">EN</a> <a href="/tr/" hreflang="tr">TR</a> </span>
+</nav>
 </div></header>
-
 <main>
 <section class="hero"><div class="wrap">
-  <div>
-    <h1 data-l="en">Sync Google Sheets to Google Calendar.</h1>
-    <h1 data-l="tr">Google E-Tablolar ile Google Takvim’i senkronize et.</h1>
-    <p class="lead" data-l="en">Rowdate turns Google Sheets rows into Google Calendar events. Change a time in the sheet and the event moves. Mark a row cancelled and the event goes away.</p>
-    <p class="lead" data-l="tr">Rowdate, Google E-Tablolar satırlarını Google Takvim etkinliğine çevirir. Tabloda saati değiştir, etkinlik kayar. Satırı iptal et, etkinlik silinir.</p>
-    <div class="cta">
-      <a class="btn primary" href="https://workspace.google.com/marketplace/app/rowdate/1047319266412"><span data-l="en">Install Rowdate</span><span data-l="tr">Rowdate’i yükle</span></a>
-      <a class="btn ghost" href="#pricing"><span data-l="en">See pricing</span><span data-l="tr">Fiyatları gör</span></a>
-    </div>
-    <p class="fine" data-l="en">100 events a month free. The price is on this page, no hidden trial.</p>
-    <p class="fine" data-l="tr">Ayda 100 etkinlik ücretsiz. Fiyat bu sayfada yazıyor, gizli deneme süresi yok.</p>
-  </div>
-  <div class="demo" aria-hidden="true">
-    <div class="sheet">
-      <div><span><span data-l="en">Client</span><span data-l="tr">Müşteri</span></span><span><span data-l="en">Day</span><span data-l="tr">Gün</span></span><span><span data-l="en">Time</span><span data-l="tr">Saat</span></span></div>
-      <div data-ev="e1"><span>Ayşe</span><span><span data-l="en">Mon</span><span data-l="tr">Pzt</span></span><span>10:00</span></div>
-      <div data-ev="e2"><span>Mert</span><span><span data-l="en">Mon</span><span data-l="tr">Pzt</span></span><span>13:30</span></div>
-      <div data-ev="e3"><span>Elif</span><span><span data-l="en">Tue</span><span data-l="tr">Sal</span></span><span>09:00</span></div>
-      <div data-ev="e4"><span>Can</span><span><span data-l="en">Tue</span><span data-l="tr">Sal</span></span><span>12:00</span></div>
-      <div data-ev="e5"><span>Selin</span><span><span data-l="en">Wed</span><span data-l="tr">Çar</span></span><span>11:00</span></div>
-      <div data-ev="e6"><span>Burak</span><span><span data-l="en">Wed</span><span data-l="tr">Çar</span></span><span>14:00</span></div>
-    </div>
-    <div class="week">
-      <div class="day" style="left:0;width:33.3%">
-        <div class="ev" id="e1" style="top:38px;height:52px;background:#2f4ab8"><b>Ayşe</b>10:00</div>
-        <div class="ev" id="e2" style="top:164px;height:34px;background:#1f7a4d"><b>Mert</b>13:30</div>
-      </div>
-      <div class="day" style="left:33.3%;width:33.3%">
-        <div class="ev" id="e3" style="top:2px;height:52px;background:#8e44ad"><b>Elif</b>09:00</div>
-        <div class="ev" id="e4" style="top:110px;height:52px;background:#c2412d"><b>Can</b>12:00</div>
-      </div>
-      <div class="day" style="left:66.6%;width:33.4%">
-        <div class="ev" id="e5" style="top:74px;height:34px;background:#b7791f"><b>Selin</b>11:00</div>
-        <div class="ev" id="e6" style="top:182px;height:52px;background:#2f4ab8"><b>Burak</b>14:00</div>
-      </div>
-    </div>
-  </div>
-</div></section>
+<div>
+<h1 data-l="en">Sync Google Sheets to Google Calendar.</h1>
 
+<p class="lead" data-l="en">Rowdate turns Google Sheets rows into Google Calendar events. Change a time in the sheet and the event moves. Mark a row cancelled and the event goes away.</p>
+
+<div class="cta">
+<a class="btn primary" href="https://workspace.google.com/marketplace/app/rowdate/1047319266412"><span data-l="en">Install Rowdate</span></a>
+<a class="btn ghost" href="#pricing"><span data-l="en">See pricing</span></a>
+</div>
+<p class="fine" data-l="en">100 events a month free. The price is on this page, no hidden trial.</p>
+
+</div>
+<div aria-hidden="true" class="demo">
+<div class="sheet">
+<div><span><span data-l="en">Client</span></span><span><span data-l="en">Day</span></span><span><span data-l="en">Time</span></span></div>
+<div data-ev="e1"><span>Ayşe</span><span><span data-l="en">Mon</span></span><span>10:00</span></div>
+<div data-ev="e2"><span>Mert</span><span><span data-l="en">Mon</span></span><span>13:30</span></div>
+<div data-ev="e3"><span>Elif</span><span><span data-l="en">Tue</span></span><span>09:00</span></div>
+<div data-ev="e4"><span>Can</span><span><span data-l="en">Tue</span></span><span>12:00</span></div>
+<div data-ev="e5"><span>Selin</span><span><span data-l="en">Wed</span></span><span>11:00</span></div>
+<div data-ev="e6"><span>Burak</span><span><span data-l="en">Wed</span></span><span>14:00</span></div>
+</div>
+<div class="week">
+<div class="day" style="left:0;width:33.3%">
+<div class="ev" id="e1" style="top:38px;height:52px;background:#2f4ab8"><b>Ayşe</b>10:00</div>
+<div class="ev" id="e2" style="top:164px;height:34px;background:#1f7a4d"><b>Mert</b>13:30</div>
+</div>
+<div class="day" style="left:33.3%;width:33.3%">
+<div class="ev" id="e3" style="top:2px;height:52px;background:#8e44ad"><b>Elif</b>09:00</div>
+<div class="ev" id="e4" style="top:110px;height:52px;background:#c2412d"><b>Can</b>12:00</div>
+</div>
+<div class="day" style="left:66.6%;width:33.4%">
+<div class="ev" id="e5" style="top:74px;height:34px;background:#b7791f"><b>Selin</b>11:00</div>
+<div class="ev" id="e6" style="top:182px;height:52px;background:#2f4ab8"><b>Burak</b>14:00</div>
+</div>
+</div>
+</div>
+</div></section>
 <section class="wash" id="how"><div class="wrap">
-  <h2 data-l="en">Three steps, no copying</h2>
-  <h2 data-l="tr">Üç adım, kopyala-yapıştır yok</h2>
-  <ol class="steps">
-    <li><h3 data-l="en">Pick a calendar</h3><h3 data-l="tr">Takvimi seç</h3>
-      <p data-l="en">Your own or any shared calendar you can edit.</p><p data-l="tr">Kendi takvimin ya da düzenleyebildiğin ortak bir takvim.</p></li>
-    <li><h3 data-l="en">Match your columns</h3><h3 data-l="tr">Sütunları eşle</h3>
-      <p data-l="en">Title, date, time, duration. Rowdate guesses them from your headers and shows a preview.</p><p data-l="tr">Başlık, tarih, saat, süre. Rowdate başlıklardan tahmin eder, önizleme gösterir.</p></li>
-    <li><h3 data-l="en">Sync</h3><h3 data-l="tr">Aktar</h3>
-      <p data-l="en">Each row gets its event ID and status. Next time only changed rows are sent.</p><p data-l="tr">Her satıra etkinlik ID'si ve durum yazılır. Sonraki seferde yalnız değişen satırlar gider.</p></li>
-  </ol>
-  <img class="shot" src="shot-en-2-done.png" alt="A Google Sheet of bookings with Rowdate status columns and the Rowdate sidebar" data-l="en" width="1280" height="800" loading="lazy">
-  <img class="shot" src="shot-tr-2-done.png" alt="Rowdate durum sütunları ve kenar paneliyle bir randevu tablosu" data-l="tr" width="1280" height="800" loading="lazy">
-</div></section>
+<h2 data-l="en">Three steps, no copying</h2>
 
+<ol class="steps">
+<li><h3 data-l="en">Pick a calendar</h3>
+<p data-l="en">Your own or any shared calendar you can edit.</p></li>
+<li><h3 data-l="en">Match your columns</h3>
+<p data-l="en">Title, date, time, duration. Rowdate guesses them from your headers and shows a preview.</p></li>
+<li><h3 data-l="en">Sync</h3>
+<p data-l="en">Each row gets its event ID and status. Next time only changed rows are sent.</p></li>
+</ol>
+<img alt="A Google Sheet of bookings with Rowdate status columns and the Rowdate sidebar" class="shot" data-l="en" height="800" loading="lazy" src="/shot-en-2-done.png" width="1280"/>
+
+<p class="fine"><a download="rowdate-sample.csv" href="/rowdate-sample.csv">Download the sample CSV spreadsheet</a> · In Google Sheets, use File → Import, change the dates and times, then map the columns using the setup guide.</p></div></section>
 <section><div class="wrap">
-  <h2 data-l="en">Built for the things that break elsewhere</h2>
-  <h2 data-l="tr">Başka eklentilerde bozulan şeyler için yapıldı</h2>
-  <p class="sub" data-l="en">We read the one-star reviews of the other Sheets-to-Calendar add-ons. These are the fixes.</p>
-  <p class="sub" data-l="tr">Diğer Tablo→Takvim eklentilerinin tek yıldızlı yorumlarını okuduk. Çözümler bunlar.</p>
-  <ul class="fixes">
-    <li><b data-l="en">Dates from formulas work</b><b data-l="tr">Formülle gelen tarihler çalışır</b>
-      <span data-l="en">=A2+7, =WORKDAY(), imported data: if Sheets shows a date, Rowdate reads it.</span><span data-l="tr">=A2+7, =İŞGÜNÜ(), içe aktarılan veri: Sheets tarih gösteriyorsa Rowdate okur.</span></li>
-    <li><b data-l="en">Edits update, not duplicate</b><b data-l="tr">Düzenleme kopya değil, güncelleme yapar</b>
-      <span data-l="en">Each row remembers its event. Change the row, the same event changes.</span><span data-l="tr">Her satır kendi etkinliğini hatırlar. Satırı değiştir, aynı etkinlik değişir.</span></li>
-    <li><b data-l="en">Cancel deletes</b><b data-l="tr">İptal silme yapar</b>
-      <span data-l="en">Put "yes" in a cancel column and the event is removed from the calendar.</span><span data-l="tr">İptal sütununa "evet" yaz, etkinlik takvimden kalkar.</span></li>
-    <li><b data-l="en">Clear errors, per row</b><b data-l="tr">Satır satır anlaşılır hata</b>
-      <span data-l="en">"Date not recognised: 32.13.2026" in the row itself, not a silent failure.</span><span data-l="tr">"Tarih anlaşılmadı: 32.13.2026" satırın kendisinde yazar, sessizce başarısız olmaz.</span></li>
-    <li><b data-l="en">Any date style</b><b data-l="tr">Her tarih biçimi</b>
-      <span data-l="en">2026-11-10, 10.11.2026, 11/10/2026 by your sheet's locale, with or without time.</span><span data-l="tr">2026-11-10, 10.11.2026, 11/10/2026 tablonun diline göre; saatli ya da saatsiz.</span></li>
-    <li><b data-l="en">Narrow permissions</b><b data-l="tr">Dar izinler</b>
-      <span data-l="en">Only the open spreadsheet and calendar events. No Gmail, no Drive, no servers of ours.</span><span data-l="tr">Yalnız açık tablo ve takvim etkinlikleri. Gmail yok, Drive yok, bizim sunucumuz yok.</span></li>
-  </ul>
-  <img class="shot" src="shot-en-3-calendar.png" alt="A week view of the calendar filled with bookings from the sheet" data-l="en" width="1280" height="800" loading="lazy">
-  <img class="shot" src="shot-tr-3-calendar.png" alt="Tablodaki randevularla dolmuş haftalık takvim görünümü" data-l="tr" width="1280" height="800" loading="lazy">
-</div></section>
+<h2 data-l="en">Formula dates, event updates and cancellations.</h2>
 
+<p class="sub" data-l="en">Keep a schedule in Google Sheets and send its rows to Calendar, with a status for each event.</p>
+
+<ul class="fixes">
+<li><b data-l="en">Dates from formulas work</b>
+<span data-l="en">=A2+7, =WORKDAY(), imported data: if Sheets shows a date, Rowdate reads it.</span></li>
+<li><b data-l="en">Edits update, not duplicate</b>
+<span data-l="en">Each row remembers its event. Change the row, the same event changes.</span></li>
+<li><b data-l="en">Cancel deletes</b>
+<span data-l="en">Put "yes" in a cancel column and the event is removed from the calendar.</span></li>
+<li><b data-l="en">Clear errors, per row</b>
+<span data-l="en">"Date not recognised: 32.13.2026" in the row itself, not a silent failure.</span></li>
+<li><b data-l="en">Any date style</b>
+<span data-l="en">2026-11-10, 10.11.2026, 11/10/2026 by your sheet's locale, with or without time.</span></li>
+<li><b data-l="en">Narrow permissions</b>
+<span data-l="en">Only the open spreadsheet and calendar events. No Gmail, no Drive, no servers of ours.</span></li>
+</ul>
+<img alt="A week view of the calendar filled with bookings from the sheet" class="shot" data-l="en" height="800" loading="lazy" src="/shot-en-3-calendar.png" width="1280"/>
+
+</div></section>
 <section class="wash" id="pricing"><div class="wrap">
-  <h2 data-l="en">Pricing</h2><h2 data-l="tr">Fiyat</h2>
-  <p class="sub" data-l="en">Start free. Pay only if you sync more than 100 events a month or want live sync.</p>
-  <p class="sub" data-l="tr">Ücretsiz başla. Ayda 100'den fazla etkinlik ya da canlı senkron istersen öde.</p>
-  <div class="prices">
-    <div class="price">
-      <h3 data-l="en">Free</h3><h3 data-l="tr">Ücretsiz</h3>
-      <div class="amt">$0</div>
-      <ul data-l="en"><li>100 new events a month</li><li>Updates and deletes included</li><li>All fields: guests, colours, repeats</li></ul>
-      <ul data-l="tr"><li>Ayda 100 yeni etkinlik</li><li>Güncelleme ve silme dahil</li><li>Tüm alanlar: katılımcı, renk, tekrar</li></ul>
-      <a class="btn ghost" href="https://workspace.google.com/marketplace/app/rowdate/1047319266412"><span data-l="en">Install Rowdate</span><span data-l="tr">Rowdate’i yükle</span></a>
-    </div>
-    <div class="price pick">
-      <h3>Pro</h3>
-      <div class="amt">$39 <small data-l="en">/ year</small><small data-l="tr">/ yıl</small></div>
-      <ul data-l="en"><li>Unlimited events</li><li>Live sync: edit a row, the event follows</li><li>Or $5 a month</li></ul>
-      <ul data-l="tr"><li>Sınırsız etkinlik</li><li>Canlı senkron: satırı düzenle, etkinlik gelsin</li><li>Ya da ayda $5</li></ul>
-      <a class="btn primary" href="https://buy.polar.sh/polar_cl_UVCASUFlJ3zMLotw4Rg9ggLsleIpURrErWCNH1DdBOD"><span data-l="en">Get Pro yearly</span><span data-l="tr">Yıllık Pro al</span></a>
-      <a class="btn ghost" href="https://buy.polar.sh/polar_cl_9T73RqGZJO36iAeYZHyxpCRS9guMxdg6vF0Fa0MUsuD"><span data-l="en">Monthly, $5</span><span data-l="tr">Aylık, $5</span></a>
-    </div>
-    <div class="price">
-      <h3 data-l="en">Lifetime</h3><h3 data-l="tr">Ömür boyu</h3>
-      <div class="amt">$79 <small data-l="en">once</small><small data-l="tr">tek sefer</small></div>
-      <ul data-l="en"><li>Everything in Pro, forever</li><li>For the twice-a-year big import</li><li>One key, up to 3 Google accounts</li></ul>
-      <ul data-l="tr"><li>Pro'daki her şey, süresiz</li><li>Yılda iki kez büyük aktarım yapanlar için</li><li>Tek anahtar, 3 Google hesabına kadar</li></ul>
-      <a class="btn ghost" href="https://buy.polar.sh/polar_cl_cJisBX95gytCzHY31EBLqw5EzPcWGKigFzKrP3uAljF"><span data-l="en">Buy lifetime</span><span data-l="tr">Ömür boyu al</span></a>
-    </div>
-  </div>
-  <p class="fine" data-l="en">Secure checkout by Polar, our merchant of record. Prices include tax where it applies. Your license key arrives on the confirmation page and by email.</p>
-  <p class="fine" data-l="tr">Ödeme, satıcımız Polar üzerinden güvenle alınır. Fiyatlara geçerli vergiler dahildir. Lisans anahtarın onay sayfasında ve e-postanda gelir.</p>
-</div></section>
+<h2 data-l="en">Pricing</h2>
+<p class="sub" data-l="en">Start free. Pay only if you sync more than 100 events a month or want live sync.</p>
 
+<div class="prices">
+<div class="price">
+<h3 data-l="en">Free</h3>
+<div class="amt">$0</div>
+<ul data-l="en"><li>100 new events a month</li><li>Updates and deletes included</li><li>All fields: guests, colours, repeats</li></ul>
+
+<a class="btn ghost" href="https://workspace.google.com/marketplace/app/rowdate/1047319266412"><span data-l="en">Install Rowdate</span></a>
+</div>
+<div class="price pick">
+<h3>Pro</h3>
+<div class="amt">$39 <small data-l="en">/ year</small></div>
+<ul data-l="en"><li>Unlimited events</li><li>Live sync: edit a row, the event follows</li><li>Or $5 a month</li></ul>
+
+<a class="btn primary" href="https://buy.polar.sh/polar_cl_UVCASUFlJ3zMLotw4Rg9ggLsleIpURrErWCNH1DdBOD"><span data-l="en">Get Pro yearly</span></a>
+<a class="btn ghost" href="https://buy.polar.sh/polar_cl_9T73RqGZJO36iAeYZHyxpCRS9guMxdg6vF0Fa0MUsuD"><span data-l="en">Monthly, $5</span></a>
+</div>
+<div class="price">
+<h3 data-l="en">Lifetime</h3>
+<div class="amt">$79 <small data-l="en">once</small></div>
+<ul data-l="en"><li>Everything in Pro, forever</li><li>For the twice-a-year big import</li><li>One key, up to 3 Google accounts</li></ul>
+
+<a class="btn ghost" href="https://buy.polar.sh/polar_cl_cJisBX95gytCzHY31EBLqw5EzPcWGKigFzKrP3uAljF"><span data-l="en">Buy lifetime</span></a>
+</div>
+</div>
+<p class="fine" data-l="en">Secure checkout by Polar, our merchant of record. Prices include tax where it applies. Your license key arrives on the confirmation page and by email.</p>
+
+</div></section>
 <section class="guides"><div class="wrap">
-  <h2 data-l="en">Guides</h2><h2 data-l="tr">Rehberler</h2>
-  <ul>
-    <li><a href="google-sheets-to-google-calendar">How to create Google Calendar events from Google Sheets</a></li>
-    <li><a href="sync-appointments-google-sheets-calendar">Sync appointments and bookings to Google Calendar</a></li>
-    <li><a href="duplicate-events-google-sheets-calendar">Stop duplicate events when syncing Sheets to Calendar</a></li>
-    <li><a href="google-sheets-formula-dates-calendar">Sync formula dates and WORKDAY deadlines to Calendar</a></li>
-  </ul>
+<h2 data-l="en">Guides</h2>
+<ul>
+<li><a href="/google-sheets-to-google-calendar">How to create Google Calendar events from Google Sheets</a></li>
+<li><a href="/sync-appointments-google-sheets-calendar">Sync appointments and bookings to Google Calendar</a></li>
+<li><a href="/duplicate-events-google-sheets-calendar">Stop duplicate events when syncing Sheets to Calendar</a></li>
+<li><a href="/google-sheets-formula-dates-calendar">Sync formula dates and WORKDAY deadlines to Calendar</a></li>
+</ul>
 </div></section>
-
 <section class="faq"><div class="wrap">
-  <h2 data-l="en">Questions</h2><h2 data-l="tr">Sorular</h2>
-  <details><summary data-l="en">Does it work with formulas and imported data?</summary><summary data-l="tr">Formüllerle ve içe aktarılan veriyle çalışır mı?</summary>
-    <p data-l="en">Yes. Rowdate reads the value Sheets calculated, in your spreadsheet's time zone. Text dates like 10.11.2026 or 2026-11-10 14:30 work too.</p>
-    <p data-l="tr">Evet. Rowdate, Sheets'in hesapladığı değeri tablonun saat diliminde okur. 10.11.2026 ya da 2026-11-10 14:30 gibi metin tarihler de çalışır.</p></details>
-  <details><summary data-l="en">What happens if I delete an event in Calendar?</summary><summary data-l="tr">Etkinliği takvimden silersem ne olur?</summary>
-    <p data-l="en">The next sync creates it again from the row. The sheet is the source of truth; to remove an event, use the cancel column.</p>
-    <p data-l="tr">Sonraki senkronda satırdan yeniden oluşturulur. Esas kaynak tablodur; etkinliği kaldırmak için iptal sütununu kullan.</p></details>
-  <details><summary data-l="en">Can it send invitations?</summary><summary data-l="tr">Davet gönderebilir mi?</summary>
-    <p data-l="en">Yes, if you map a guest email column and tick "Email invitations to guests". Otherwise guests are added silently.</p>
-    <p data-l="tr">Evet; katılımcı e-posta sütununu seçip "Katılımcılara davet e-postası gönder"i işaretlersen. Yoksa katılımcılar sessizce eklenir.</p></details>
-  <details><summary data-l="en">Where is my data stored?</summary><summary data-l="tr">Verim nerede saklanıyor?</summary>
-    <p data-l="en">In your spreadsheet and your calendar. Rowdate runs inside Google Apps Script and only talks to the Google Calendar API and our license checker.</p>
-    <p data-l="tr">Tablonda ve takviminde. Rowdate Google Apps Script içinde çalışır; yalnızca Google Takvim API'si ve lisans kontrolüyle konuşur.</p></details>
-  <details><summary data-l="en">Refunds?</summary><summary data-l="tr">İade?</summary>
-    <p data-l="en">Email us within 14 days of your first payment for a full refund. You can cancel any time.</p>
-    <p data-l="tr">İlk ödemeden sonraki 14 gün içinde yaz, tam iade yaparız. İstediğin an iptal edebilirsin.</p></details>
+<h2 data-l="en">Questions</h2>
+<details><summary data-l="en">Does it work with formulas and imported data?</summary>
+<p data-l="en">Yes. Rowdate reads the value Sheets calculated, in your spreadsheet's time zone. Text dates like 10.11.2026 or 2026-11-10 14:30 work too.</p>
+</details>
+<details><summary data-l="en">What happens if I delete an event in Calendar?</summary>
+<p data-l="en">The next sync creates it again from the row. The sheet is the source of truth; to remove an event, use the cancel column.</p>
+</details>
+<details><summary data-l="en">Can it send invitations?</summary>
+<p data-l="en">Yes, if you map a guest email column and tick "Email invitations to guests". Otherwise guests are added silently.</p>
+</details>
+<details><summary data-l="en">Where is my data stored?</summary>
+<p data-l="en">In your spreadsheet and your calendar. Rowdate runs inside Google Apps Script and only talks to the Google Calendar API and our license checker.</p>
+</details>
+<details><summary data-l="en">Refunds?</summary>
+<p data-l="en">Email us within 14 days of your first payment for a full refund. You can cancel any time.</p>
+</details>
 </div></section>
 </main>
-
 <footer class="site"><div class="wrap">
-  <div>© 2026 Rowdate · CodEven</div>
-  <div><a href="guide">Guide</a><a href="privacy">Privacy</a><a href="terms">Terms</a><a data-support href="#"></a></div>
+<div>© 2026 Rowdate · CodEven</div>
+<div><a href="/guide">Guide</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a data-support="" href="#"></a></div>
 </div></footer>
-<script src="site.js"></script>
+<script src="/site.js"></script>
 </body>
 </html>

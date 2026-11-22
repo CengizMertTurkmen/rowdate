@@ -4,6 +4,8 @@ var ROWDATE = {
 
 (function () {
   function pickLang() {
+    var fixed = document.body.getAttribute('data-fixed-lang');
+    if (fixed === 'en' || fixed === 'tr') return fixed;
     var q = new URLSearchParams(location.search).get('lang');
     if (q === 'tr' || q === 'en') return q;
     try { var s = localStorage.getItem('rowdate_lang'); if (s) return s; } catch (e) {}

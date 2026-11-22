@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Google E-Tablolar ile Google Takvim Senkronizasyonu | Rowdate</title>
+<meta content="Google E-Tablolar satırlarını Google Takvim etkinliklerine aktar. Randevuları güncelle, iptal et, formülle hesaplanan tarihleri kullan. Ayda 100 yeni etkinlik ücretsiz." name="description"/>
+<link href="https://rowdate.codeven.io/tr/" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Rowdate" property="og:site_name"/>
+<meta content="Google E-Tablolar ile Google Takvim Senkronizasyonu | Rowdate" property="og:title"/>
+<meta content="Google E-Tablolar satırlarını Google Takvim etkinliklerine aktar. Randevuları güncelle, iptal et, formülle hesaplanan tarihleri kullan. Ayda 100 yeni etkinlik ücretsiz." property="og:description"/>
+<meta content="https://rowdate.codeven.io/tr/" property="og:url"/>
+<meta content="https://rowdate.codeven.io/shot-tr-3-calendar.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Rowdate", "description": "Google E-Tablolar satırlarını Google Takvim etkinliklerine aktar. Randevuları güncelle, iptal et, formülle hesaplanan tarihleri kullan. Ayda 100 yeni etkinlik ücretsiz.", "url": "https://rowdate.codeven.io/tr/", "image": "https://rowdate.codeven.io/shot-tr-3-calendar.png", "applicationCategory": "BusinessApplication", "applicationSubCategory": "Calendar and scheduling", "operatingSystem": "Web (Google Sheets add-on)", "installUrl": "https://workspace.google.com/marketplace/app/rowdate/1047319266412", "offers": [{"@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD"}, {"@type": "Offer", "name": "Pro monthly", "price": "5", "priceCurrency": "USD"}, {"@type": "Offer", "name": "Pro yearly", "price": "39", "priceCurrency": "USD"}, {"@type": "Offer", "name": "Lifetime", "price": "79", "priceCurrency": "USD"}], "publisher": {"@type": "Organization", "name": "CodEven", "url": "https://www.codeven.io"}, "inLanguage": "tr"}</script>
+<link href="/logo.svg" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="/style.css" rel="stylesheet"/>
+<link href="https://rowdate.codeven.io/" hreflang="en" rel="alternate"/><link href="https://rowdate.codeven.io/tr/" hreflang="tr" rel="alternate"/><link href="https://rowdate.codeven.io/" hreflang="x-default" rel="alternate"/></head>
+<body data-fixed-lang="tr" data-lang="tr">
+<header class="top"><div class="wrap">
+<a class="brand" href="/tr/"><img alt="" height="30" src="/logo.svg" width="30"/> Rowdate</a>
+<nav>
+<a class="hide-sm" href="#how"><span data-l="tr">Nasıl çalışır</span></a>
+<a class="hide-sm" href="#pricing"><span data-l="tr">Fiyat</span></a>
+<a href="/guide"><span data-l="tr">Rehber</span></a>
+<span class="langs"><a href="/" hreflang="en">EN</a> <a aria-current="page" href="/tr/" hreflang="tr">TR</a> </span>
+</nav>
+</div></header>
+<main>
+<section class="hero"><div class="wrap">
+<div>
+
+<h1 data-l="tr">Google E-Tablolar ile Google Takvim’i senkronize et.</h1>
+
+<p class="lead" data-l="tr">Rowdate, Google E-Tablolar satırlarını Google Takvim etkinliğine çevirir. Tabloda saati değiştir, etkinlik kayar. Satırı iptal et, etkinlik silinir.</p>
+<div class="cta">
+<a class="btn primary" href="https://workspace.google.com/marketplace/app/rowdate/1047319266412"><span data-l="tr">Rowdate’i yükle</span></a>
+<a class="btn ghost" href="#pricing"><span data-l="tr">Fiyatları gör</span></a>
+</div>
+
+<p class="fine" data-l="tr">Ayda 100 etkinlik ücretsiz. Fiyat bu sayfada yazıyor, gizli deneme süresi yok.</p>
+</div>
+<div aria-hidden="true" class="demo">
+<div class="sheet">
+<div><span><span data-l="tr">Müşteri</span></span><span><span data-l="tr">Gün</span></span><span><span data-l="tr">Saat</span></span></div>
+<div data-ev="e1"><span>Ayşe</span><span><span data-l="tr">Pzt</span></span><span>10:00</span></div>
+<div data-ev="e2"><span>Mert</span><span><span data-l="tr">Pzt</span></span><span>13:30</span></div>
+<div data-ev="e3"><span>Elif</span><span><span data-l="tr">Sal</span></span><span>09:00</span></div>
+<div data-ev="e4"><span>Can</span><span><span data-l="tr">Sal</span></span><span>12:00</span></div>
+<div data-ev="e5"><span>Selin</span><span><span data-l="tr">Çar</span></span><span>11:00</span></div>
+<div data-ev="e6"><span>Burak</span><span><span data-l="tr">Çar</span></span><span>14:00</span></div>
+</div>
+<div class="week">
+<div class="day" style="left:0;width:33.3%">
+<div class="ev" id="e1" style="top:38px;height:52px;background:#2f4ab8"><b>Ayşe</b>10:00</div>
+<div class="ev" id="e2" style="top:164px;height:34px;background:#1f7a4d"><b>Mert</b>13:30</div>
+</div>
+<div class="day" style="left:33.3%;width:33.3%">
+<div class="ev" id="e3" style="top:2px;height:52px;background:#8e44ad"><b>Elif</b>09:00</div>
+<div class="ev" id="e4" style="top:110px;height:52px;background:#c2412d"><b>Can</b>12:00</div>
+</div>
+<div class="day" style="left:66.6%;width:33.4%">
+<div class="ev" id="e5" style="top:74px;height:34px;background:#b7791f"><b>Selin</b>11:00</div>
+<div class="ev" id="e6" style="top:182px;height:52px;background:#2f4ab8"><b>Burak</b>14:00</div>
+</div>
+</div>
+</div>
+</div></section>
+<section class="wash" id="how"><div class="wrap">
+
+<h2 data-l="tr">Üç adım, kopyala-yapıştır yok</h2>
+<ol class="steps">
+<li><h3 data-l="tr">Takvimi seç</h3>
+<p data-l="tr">Kendi takvimin ya da düzenleyebildiğin ortak bir takvim.</p></li>
+<li><h3 data-l="tr">Sütunları eşle</h3>
+<p data-l="tr">Başlık, tarih, saat, süre. Rowdate başlıklardan tahmin eder, önizleme gösterir.</p></li>
+<li><h3 data-l="tr">Aktar</h3>
+<p data-l="tr">Her satıra etkinlik ID'si ve durum yazılır. Sonraki seferde yalnız değişen satırlar gider.</p></li>
+</ol>
+
+<img alt="Rowdate durum sütunları ve kenar paneliyle bir randevu tablosu" class="shot" data-l="tr" height="800" loading="lazy" src="/shot-tr-2-done.png" width="1280"/>
+<p class="fine"><a download="rowdate-sample.csv" href="/rowdate-sample.csv">Örnek CSV tablosunu indir</a> · Google E-Tablolar’da Dosya → İçe aktar ile aç; tarih ve saatleri değiştir, rehbere göre sütunları eşle.</p></div></section>
+<section><div class="wrap">
+
+<h2 data-l="tr">Formül tarihleri, güncellemeler ve iptaller.</h2>
+
+<p class="sub" data-l="tr">Programını Google E-Tablolar’da tut; satırları Takvim’e aktar ve her etkinliğin durumunu tablonda gör.</p>
+<ul class="fixes">
+<li><b data-l="tr">Formülle gelen tarihler çalışır</b>
+<span data-l="tr">=A2+7, =İŞGÜNÜ(), içe aktarılan veri: Sheets tarih gösteriyorsa Rowdate okur.</span></li>
+<li><b data-l="tr">Düzenleme kopya değil, güncelleme yapar</b>
+<span data-l="tr">Her satır kendi etkinliğini hatırlar. Satırı değiştir, aynı etkinlik değişir.</span></li>
+<li><b data-l="tr">İptal silme yapar</b>
+<span data-l="tr">İptal sütununa "evet" yaz, etkinlik takvimden kalkar.</span></li>
+<li><b data-l="tr">Satır satır anlaşılır hata</b>
+<span data-l="tr">"Tarih anlaşılmadı: 32.13.2026" satırın kendisinde yazar, sessizce başarısız olmaz.</span></li>
+<li><b data-l="tr">Her tarih biçimi</b>
+<span data-l="tr">2026-11-10, 10.11.2026, 11/10/2026 tablonun diline göre; saatli ya da saatsiz.</span></li>
+<li><b data-l="tr">Dar izinler</b>
+<span data-l="tr">Yalnız açık tablo ve takvim etkinlikleri. Gmail yok, Drive yok, bizim sunucumuz yok.</span></li>
+</ul>
+
+<img alt="Tablodaki randevularla dolmuş haftalık takvim görünümü" class="shot" data-l="tr" height="800" loading="lazy" src="/shot-tr-3-calendar.png" width="1280"/>
+</div></section>
+<section class="wash" id="pricing"><div class="wrap">
+<h2 data-l="tr">Fiyat</h2>
+
+<p class="sub" data-l="tr">Ücretsiz başla. Ayda 100'den fazla etkinlik ya da canlı senkron istersen öde.</p>
+<div class="prices">
+<div class="price">
+<h3 data-l="tr">Ücretsiz</h3>
+<div class="amt">$0</div>
+
+<ul data-l="tr"><li>Ayda 100 yeni etkinlik</li><li>Güncelleme ve silme dahil</li><li>Tüm alanlar: katılımcı, renk, tekrar</li></ul>
+<a class="btn ghost" href="https://workspace.google.com/marketplace/app/rowdate/1047319266412"><span data-l="tr">Rowdate’i yükle</span></a>
+</div>
+<div class="price pick">
+<h3>Pro</h3>
+<div class="amt">$39 <small data-l="tr">/ yıl</small></div>
+
+<ul data-l="tr"><li>Sınırsız etkinlik</li><li>Canlı senkron: satırı düzenle, etkinlik gelsin</li><li>Ya da ayda $5</li></ul>
+<a class="btn primary" href="https://buy.polar.sh/polar_cl_UVCASUFlJ3zMLotw4Rg9ggLsleIpURrErWCNH1DdBOD"><span data-l="tr">Yıllık Pro al</span></a>
+<a class="btn ghost" href="https://buy.polar.sh/polar_cl_9T73RqGZJO36iAeYZHyxpCRS9guMxdg6vF0Fa0MUsuD"><span data-l="tr">Aylık, $5</span></a>
+</div>
+<div class="price">
+<h3 data-l="tr">Ömür boyu</h3>
+<div class="amt">$79 <small data-l="tr">tek sefer</small></div>
+
+<ul data-l="tr"><li>Pro'daki her şey, süresiz</li><li>Yılda iki kez büyük aktarım yapanlar için</li><li>Tek anahtar, 3 Google hesabına kadar</li></ul>
+<a class="btn ghost" href="https://buy.polar.sh/polar_cl_cJisBX95gytCzHY31EBLqw5EzPcWGKigFzKrP3uAljF"><span data-l="tr">Ömür boyu al</span></a>
+</div>
+</div>
+
+<p class="fine" data-l="tr">Ödeme, satıcımız Polar üzerinden güvenle alınır. Fiyatlara geçerli vergiler dahildir. Lisans anahtarın onay sayfasında ve e-postanda gelir.</p>
+</div></section>
+<section class="guides"><div class="wrap">
+<h2 data-l="tr">Rehberler</h2>
+<ul>
+<li><a href="/google-sheets-to-google-calendar">E-Tablolar satırlarını Takvim etkinliğine çevirme (İngilizce)</a></li>
+<li><a href="/sync-appointments-google-sheets-calendar">Randevuları Google Takvim ile senkronize etme (İngilizce)</a></li>
+<li><a href="/duplicate-events-google-sheets-calendar">Tekrarlanan etkinlikleri önleme (İngilizce)</a></li>
+<li><a href="/google-sheets-formula-dates-calendar">Formül tarihleri ve İŞGÜNÜ son tarihlerini aktarma (İngilizce)</a></li>
+</ul>
+</div></section>
+<section class="faq"><div class="wrap">
+<h2 data-l="tr">Sorular</h2>
+<details><summary data-l="tr">Formüllerle ve içe aktarılan veriyle çalışır mı?</summary>
+
+<p data-l="tr">Evet. Rowdate, Sheets'in hesapladığı değeri tablonun saat diliminde okur. 10.11.2026 ya da 2026-11-10 14:30 gibi metin tarihler de çalışır.</p></details>
+<details><summary data-l="tr">Etkinliği takvimden silersem ne olur?</summary>
+
+<p data-l="tr">Sonraki senkronda satırdan yeniden oluşturulur. Esas kaynak tablodur; etkinliği kaldırmak için iptal sütununu kullan.</p></details>
+<details><summary data-l="tr">Davet gönderebilir mi?</summary>
+
+<p data-l="tr">Evet; katılımcı e-posta sütununu seçip "Katılımcılara davet e-postası gönder"i işaretlersen. Yoksa katılımcılar sessizce eklenir.</p></details>
+<details><summary data-l="tr">Verim nerede saklanıyor?</summary>
+
+<p data-l="tr">Tablonda ve takviminde. Rowdate Google Apps Script içinde çalışır; yalnızca Google Takvim API'si ve lisans kontrolüyle konuşur.</p></details>
+<details><summary data-l="tr">İade?</summary>
+
+<p data-l="tr">İlk ödemeden sonraki 14 gün içinde yaz, tam iade yaparız. İstediğin an iptal edebilirsin.</p></details>
+</div></section>
+</main>
+<footer class="site"><div class="wrap">
+<div>© 2026 Rowdate · CodEven</div>
+<div><a href="/guide">Rehber</a><a href="/privacy">Gizlilik</a><a href="/terms">Koşullar</a><a data-support="" href="#"></a></div>
+</div></footer>
+<script src="/site.js"></script>
+</body>
+</html>
